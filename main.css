@@ -2069,22 +2069,6 @@ input, select, textarea {
 		margin-left: 0.9375em;
 	}
 
-	@media screen and (max-width: 980px) {
-
-		.pagination a, .pagination span {
-			font-size: 0.9rem;
-		}
-
-	}
-
-	@media screen and (max-width: 480px) {
-
-		.pagination .page, .pagination .extra {
-			display: none;
-		}
-
-	}
-
 .pagination a, .pagination span {
 	border-color: #eeeeee;
 }
@@ -2110,7 +2094,12 @@ input, select, textarea {
 
 .pagination span {
 	color: #eeeeee;
-}	
+}
+
+.pagination-container {
+    width: 100%;
+    height: 100%;
+}
 
 /* Button */
 
