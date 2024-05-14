@@ -29,6 +29,8 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+
+
 body {
 	line-height: 1;
 }
@@ -50,6 +52,22 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+article .col-4:nth-child(even) {
+	float:right;
+}
+
+	figure.row {
+		display: flex;
+	}
+
+	figure.row > .col-4 {
+		width: 33.33%; /* 이미지를 차지할 부분의 너비 */
+	}
+
+	figure.row >.col-8 {
+		width: 66.66%; /* 이미지 옆에 배치될 내용의 너비 */
+	}
 
 body {
 	-webkit-text-size-adjust: none;
@@ -1748,6 +1766,25 @@ input, select, textarea {
 
 
 /* Image */
+figure > .col-4 {
+	max-width: 30%;
+	float: left;
+	
+}
+
+figure > .col-8 {
+	float: left;
+}
+
+.col-4 > img {
+	width: 100%;
+	height: auto;
+}
+
+figure > .col-4:nth-child(even) {
+	float: right;
+}
+
 
 	.image {
 		-moz-transition: opacity 0.25s ease-in-out;
@@ -1760,18 +1797,21 @@ input, select, textarea {
 	}
 
 		.image img {
-			display: block;
+			display: inline;
 			width: 100%;
 		}
 
 		.image.fit {
-			display: block;
-			width: 100%;
+			display: inline;
+			max-width: 100%; /* 이미지의 최대 너비를 부모 요소인 div의 너비에 맞추기 */
+			height: auto; /* 이미지의 높이를 자동으로 조정하여 가로세로 비율 유지 */
+			  
 		}
 
 		.image.featured {
-			display: block;
-			width: 100%;
+			display: inline;
+			max-width: 100%; /* 이미지의 최대 너비를 부모 요소인 div의 너비에 맞추기 */
+			height: auto; /* 이미지의 높이를 자동으로 조정하여 가로세로 비율 유지 */
 			margin: 0 0 3em 0;
 		}
 
@@ -2175,6 +2215,10 @@ input, select, textarea {
 		background: #fff;
 		overflow-x: hidden;
 		padding: 6em 0 6em 0;
+	}
+
+	article .image:nth-child(even) {
+		float: right;
 	}
 
 	.image-wrapper {
